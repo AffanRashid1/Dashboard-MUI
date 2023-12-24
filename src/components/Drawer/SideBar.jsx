@@ -11,7 +11,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Main, AppBar, DrawerHeader, DrawerStyle } from "./SideBarStyles";
 import DrawerList from "./DrawerList";
-import { Avatar, Stack } from "@mui/material";
+import { Avatar, Grid, Stack } from "@mui/material";
+import BalanceCard from "../Cards/BalanceCard/BalanceCard";
+import TransactionCard from "../Cards/TransactionCard/TransactionCard";
+import ReportCard from "../Cards/Report/ReportCard";
+import BudgetCard from "../Cards/BudgetCard/BudgetCard";
+import SubscriptionCard from "../Cards/SubscriptionCard/SubscriptionCard";
+import LoansCard from "../Cards/Loans/LoansCard";
 
 export default function SideBar() {
   const drawerWidth = 240;
@@ -28,7 +34,7 @@ export default function SideBar() {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={open} sx={{ bgcolor: "#1E1611" }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -59,6 +65,27 @@ export default function SideBar() {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
+
+        <Grid container xs={12} spacing={2}>
+          <Grid item xs={4}>
+            <BalanceCard />
+          </Grid>
+          <Grid item xs={4}>
+            <TransactionCard />
+          </Grid>
+          <Grid item xs={4}>
+            <ReportCard />
+          </Grid>
+          <Grid item xs={4}>
+            <BudgetCard />
+          </Grid>
+          <Grid item xs={4}>
+            <SubscriptionCard />
+          </Grid>
+          <Grid item xs={4}>
+            <LoansCard />
+          </Grid>
+        </Grid>
       </Main>
     </Box>
   );

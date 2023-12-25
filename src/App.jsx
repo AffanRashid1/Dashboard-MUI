@@ -22,6 +22,9 @@ const App = () => {
       action: {
         active: "#C7C4C6",
       },
+      typography: {
+        fontFamily: "Bai Jamjuree",
+      },
     },
   });
 

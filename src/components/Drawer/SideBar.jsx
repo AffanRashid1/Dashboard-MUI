@@ -20,7 +20,6 @@ import SubscriptionCard from "../Cards/SubscriptionCard/SubscriptionCard";
 import LoansCard from "../Cards/Loans/LoansCard";
 
 export default function SideBar() {
-  const drawerWidth = 240;
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {

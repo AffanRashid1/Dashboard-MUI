@@ -1,8 +1,12 @@
 import React from "react";
-import SideBar from "../Drawer/SideBar";
+import MiniDrawer from "../Drawer/MiniDrawer";
 
 const Layout = ({ children }) => {
-  return <SideBar>{children}</SideBar>;
+  return (
+    <>
+      <MiniDrawer>{children}</MiniDrawer>
+    </>
+  );
 };
 
 export default Layout;

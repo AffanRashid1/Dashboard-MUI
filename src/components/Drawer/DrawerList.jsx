@@ -69,11 +69,28 @@ const DrawerList = () => {
   return (
     <>
       <List>
-        {listItem?.map((each, i) => (
-          <ListItem key={i} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>{each?.icon}</ListItemIcon>
-              <ListItemText primary={each?.text} />
+        {listItem.map((each, index) => (
+          <ListItem key={index} disablePadding sx={{ display: "block" }}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                {each.icon}
+              </ListItemIcon>
+              <ListItemText
+                primary={each.text}
+                sx={{ opacity: open ? 1 : 0 }}
+              />
             </ListItemButton>
           </ListItem>
         ))}

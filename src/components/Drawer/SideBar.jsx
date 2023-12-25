@@ -12,29 +12,23 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Main, AppBar, DrawerHeader, DrawerStyle } from "./SideBarStyles";
 import DrawerList from "./DrawerList";
 import { Avatar, Grid, Stack } from "@mui/material";
-import BalanceCard from "../Cards/BalanceCard/BalanceCard";
-import TransactionCard from "../Cards/TransactionCard/TransactionCard";
-import ReportCard from "../Cards/Report/ReportCard";
-import BudgetCard from "../Cards/BudgetCard/BudgetCard";
-import SubscriptionCard from "../Cards/SubscriptionCard/SubscriptionCard";
-import LoansCard from "../Cards/Loans/LoansCard";
 
-export default function SideBar() {
+export default function SideBar({ children }) {
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
   };
 
-  const handleDrawerClose = () => {
+  const handleDrawerClose = ({ children }) => {
     setOpen(false);
   };
 
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} sx={{ bgcolor: "#1E1611" }}>
-        <Toolbar>
+      <AppBar position="fixed" open={open}>
+        <Toolbar sx={{ bgcolor: "#1E1611" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -62,30 +56,8 @@ export default function SideBar() {
         <Divider />
         <DrawerList />
       </Drawer>
-      <Main open={open}>
-        <DrawerHeader />
 
-        <Grid container xs={12} spacing={2}>
-          <Grid item xs={4}>
-            <BalanceCard />
-          </Grid>
-          <Grid item xs={4}>
-            <TransactionCard />
-          </Grid>
-          <Grid item xs={4}>
-            <ReportCard />
-          </Grid>
-          <Grid item xs={4}>
-            <BudgetCard />
-          </Grid>
-          <Grid item xs={4}>
-            <SubscriptionCard />
-          </Grid>
-          <Grid item xs={4}>
-            <LoansCard />
-          </Grid>
-        </Grid>
-      </Main>
+      <Main open={open}>{children}</Main>
     </Box>
   );
 }

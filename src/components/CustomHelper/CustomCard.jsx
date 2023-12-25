@@ -8,10 +8,8 @@ const CustomCard = ({ title, children }) => {
       sx={{
         bgcolor: "secondary.main",
         borderRadius: "15px",
-        height: "350px",
-        maxHeight: "350px",
-        overflow: "scroll",
-        padding: "0 20px",
+        padding: "20px",
+        minHeight: "380px",
       }}
     >
       <Stack

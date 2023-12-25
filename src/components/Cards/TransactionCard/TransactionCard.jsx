@@ -74,7 +74,7 @@ const TransactionCard = () => {
           sx={{
             bgcolor: "#302924",
             borderRadius: "10px",
-            height: "70%",
+            height: "215px",
             p: "0 10px",
             overflow: "scroll",
             mt: 1,

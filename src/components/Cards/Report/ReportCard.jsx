@@ -7,7 +7,7 @@ const ReportCard = () => {
   return (
     <>
       <CustomCard title="Report">
-        <Box marginTop="40px">
+        <Box height="215px">
           <BarGraph />
         </Box>
       </CustomCard>

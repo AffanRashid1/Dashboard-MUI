@@ -9,7 +9,7 @@ const SubscriptionList = () => {
         direction="row"
         alignItems="center"
         justifyContent="space-between"
-        m="16px 0"
+        m="20px 0"
       >
         <Stack direction="row" alignItems="center" spacing={2}>
           <CampaignIcon />

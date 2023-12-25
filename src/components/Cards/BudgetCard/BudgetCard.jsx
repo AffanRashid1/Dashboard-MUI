@@ -28,12 +28,22 @@ const BudgetCard = () => {
           sx={{
             bgcolor: "#302924",
             borderRadius: "10px",
-            height: "50%",
+            maxHeight: "590px",
             p: "0 10px",
             overflow: "scroll",
-            mt: 1,
+            mt: 3,
           }}
         >
+          <BudgetList />
+          <BudgetList />
+          <BudgetList />
+          <BudgetList />
+          <BudgetList />
+          <BudgetList />
+          <BudgetList />
+          <BudgetList />
+          <BudgetList />
+          <BudgetList />
           <BudgetList />
           <BudgetList />
           <BudgetList />

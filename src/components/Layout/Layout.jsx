@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import MiniDrawer from "../Drawer/MiniDrawer";
+import NavBar from "../Cards/AppBar/NavBar";
 
 const Layout = ({ children }) => {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
-      <MiniDrawer>{children}</MiniDrawer>
+      <NavBar open={open} setOpen={setOpen} />
+      <MiniDrawer open={open} setOpen={setOpen}>
+        {children}
+      </MiniDrawer>
     </>
   );
 };

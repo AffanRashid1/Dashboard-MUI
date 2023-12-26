@@ -49,10 +49,6 @@ const DrawerList = () => {
       text: "Reports",
     },
     {
-      icon: <SavingsIcon />,
-      text: "Saving",
-    },
-    {
       icon: <PaymentIcon />,
       text: "Financial Advice",
     },
@@ -68,7 +64,7 @@ const DrawerList = () => {
 
   return (
     <>
-      <List>
+      <List sx={{ bgcolor: "secondary.main" }}>
         {listItem.map((each, index) => (
           <ListItem key={index} disablePadding sx={{ display: "block" }}>
             <ListItemButton

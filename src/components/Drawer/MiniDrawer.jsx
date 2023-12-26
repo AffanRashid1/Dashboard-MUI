@@ -1,42 +1,25 @@
 import React, { useState } from "react";
-import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
+import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import {
-  Drawer,
-  DrawerHeader,
-  AppBar,
-  closedMixin,
-  openedMixin,
-} from "./DrawerStyles";
+import { Drawer, DrawerHeader } from "./DrawerStyles";
 import DrawerList from "./DrawerList";
 import { Avatar } from "@mui/material";
 
-export default function MiniDrawer({ children }) {
-  const [open, setOpen] = useState(false);
-
+export default function MiniDrawer({ children, open }) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={() => {
-              setOpen(!open);
-            }}
-            edge="start"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Home
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer variant="permanent" open={open}>
+      <Drawer
+        variant="permanent"
+        open={open}
+        PaperProps={{
+          sx: {
+            backgroundColor: "secondary.main",
+          },
+        }}
+      >
         <DrawerHeader>
           <Avatar />
           <Typography variant="h5">Affan</Typography>

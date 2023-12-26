@@ -18,6 +18,7 @@ const theme = createTheme({
     },
     action: {
       active: "#C7C4C6",
+      selected: "red",
     },
     typography: {
       fontFamily: "Bai Jamjuree",

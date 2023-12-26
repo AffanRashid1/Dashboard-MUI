@@ -5,7 +5,6 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import { Drawer, DrawerHeader } from "./DrawerStyles";
 import DrawerList from "./DrawerList";
-import { Avatar } from "@mui/material";
 
 export default function MiniDrawer({ children, open }) {
   return (
@@ -20,12 +19,8 @@ export default function MiniDrawer({ children, open }) {
           },
         }}
       >
-        <DrawerHeader>
-          <Avatar />
-          <Typography variant="h5">Affan</Typography>
-        </DrawerHeader>
         <Divider />
-        <DrawerList />
+        <DrawerList open={open} />
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />

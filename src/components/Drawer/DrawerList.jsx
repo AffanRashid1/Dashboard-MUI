@@ -1,10 +1,12 @@
 import React from "react";
 import {
+  Avatar,
   List,
   ListItem,
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Stack,
 } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import FeaturedPlayListIcon from "@mui/icons-material/FeaturedPlayList";
@@ -17,7 +19,7 @@ import PaymentIcon from "@mui/icons-material/Payment";
 import PersonIcon from "@mui/icons-material/Person";
 import SettingsIcon from "@mui/icons-material/Settings";
 
-const DrawerList = () => {
+const DrawerList = ({ open }) => {
   let listItem = [
     {
       icon: <HomeIcon />,
@@ -27,10 +29,7 @@ const DrawerList = () => {
       icon: <FeaturedPlayListIcon />,
       text: "Budget",
     },
-    {
-      icon: <PaidIcon />,
-      text: "Budget",
-    },
+
     {
       icon: <SubscriptionsIcon />,
       text: "Subscription",
@@ -45,7 +44,7 @@ const DrawerList = () => {
       text: "Loans",
     },
     {
-      icon: <SavingsIcon />,
+      icon: <PaidIcon />,
       text: "Reports",
     },
     {
@@ -58,15 +57,49 @@ const DrawerList = () => {
     },
     {
       icon: <SettingsIcon />,
-      text: "Setting",
+      text: "Settings",
     },
   ];
 
   return (
     <>
       <List sx={{ bgcolor: "secondary.main" }}>
+        <ListItem sx={{ margin: "5px 0" }}>
+          <ListItemButton
+            sx={{
+              minHeight: 48,
+              justifyContent: open ? "initial" : "center",
+              px: 2.5,
+            }}
+          >
+            <ListItemIcon
+              sx={{
+                minWidth: 0,
+                mr: open ? 3 : "auto",
+                justifyContent: "center",
+              }}
+            >
+              <Avatar
+                src="https://658079be92f9786c0c7c6ca8--dapper-moxie-91d630.netlify.app/assets/image-R7WikpmC.png"
+                sx={{ width: 50, height: 50 }}
+              />
+            </ListItemIcon>
+            <ListItemText
+              primary={"Affan"}
+              sx={{
+                opacity: open ? 1 : 0,
+                color: "white",
+              }}
+              primaryTypographyProps={{
+                fontSize: "22px",
+                fontWeight: "bold",
+                fontFamily: "Bai Jamjuree",
+              }}
+            />
+          </ListItemButton>
+        </ListItem>
         {listItem.map((each, index) => (
-          <ListItem key={index} disablePadding sx={{ display: "block" }}>
+          <ListItem key={index} sx={{ display: "block" }}>
             <ListItemButton
               sx={{
                 minHeight: 48,
@@ -85,7 +118,14 @@ const DrawerList = () => {
               </ListItemIcon>
               <ListItemText
                 primary={each.text}
-                sx={{ opacity: open ? 1 : 0 }}
+                sx={{
+                  opacity: open ? 1 : 0,
+                  color: "white",
+                }}
+                primaryTypographyProps={{
+                  fontSize: "20px",
+                  fontFamily: "Bai Jamjuree",
+                }}
               />
             </ListItemButton>
           </ListItem>

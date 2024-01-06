@@ -26,7 +26,7 @@ const CustomCard = ({ title, children }) => {
           padding: "15px 0",
         }}
       >
-        <Typography fontFamily="Bai Jamjuree" fontSize={20}>
+        <Typography fontFamily="Bai Jamjuree" fontSize="20">
           {title}
         </Typography>
         <IconButton>
